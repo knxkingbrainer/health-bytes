@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Acefab ♤ Health Bytes</title>
+<meta name="description" content="Health tips, life hacks and medical terms in your inbox every 2 days.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0d0b08;
+    --panel:#17130d;
+    --line:#3a2f1a;
+    --gold:#c9a24a;
+    --gold-bright:#e6c470;
+    --cream:#efe6d2;
+    --muted:#a39878;
+    --alert:#e58a6b;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    background:var(--ink);
+    color:var(--cream);
+    font-family:'Playfair Display',Georgia,serif;
+    line-height:1.65;
+    font-size:17px;
+    min-height:100vh;
+  }
+  .wrap{max-width:560px;margin:0 auto;padding:36px 22px 48px}
+
+  /* Header */
+  header{text-align:center;padding-bottom:8px}
+  .ecg{width:100%;max-width:340px;height:56px;margin:0 auto 10px;display:block}
+  .ecg path{
+    fill:none;stroke:var(--gold);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;
+    stroke-dasharray:640;stroke-dashoffset:640;
+    animation:trace 2.4s ease-out .2s forwards;
+  }
+  @keyframes trace{to{stroke-dashoffset:0}}
+  h1{
+    font-family:'Cinzel',Georgia,serif;
+    font-weight:700;
+    font-size:clamp(28px,8vw,40px);
+    line-height:1.15;
+    letter-spacing:.04em;
+    color:var(--gold-bright);
+  }
+  .promise{margin-top:12px;font-size:19px;color:var(--cream)}
+  .sub{margin-top:12px;color:var(--muted);font-size:16px}
+
+  /* Preview */
+  .preview{
+    margin-top:30px;
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-left:3px solid var(--gold);
+    border-radius:6px;
+    padding:20px 20px 18px;
+  }
+  .preview .tag{
+    font-family:'Cinzel',serif;
+    font-size:14px;
+    letter-spacing:.08em;
+    color:var(--gold);
+    margin-bottom:6px;
+  }
+  .preview h2{
+    font-family:'Cinzel',serif;
+    font-weight:500;
+    font-size:22px;
+    color:var(--cream);
+    margin-bottom:8px;
+  }
+  .preview p{font-size:16px;color:var(--cream)}
+  .preview .ex{margin-top:8px;font-style:italic;color:var(--muted)}
+
+  /* Sign-up */
+  .signup{margin-top:30px}
+  label{display:block;font-size:15px;color:var(--muted);margin:14px 0 6px}
+  label span{color:var(--muted);opacity:.8}
+  input[type=text],input[type=email]{
+    width:100%;
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:6px;
+    color:var(--cream);
+    font:inherit;
+    font-size:17px;
+    padding:13px 14px;
+  }
+  input::placeholder{color:#6d644d}
+  input:focus-visible,button:focus-visible{outline:2px solid var(--gold-bright);outline-offset:2px}
+  button{
+    width:100%;
+    margin-top:20px;
+    background:var(--gold);
+    color:#1a1407;
+    border:0;
+    border-radius:6px;
+    font-family:'Cinzel',serif;
+    font-weight:700;
+    font-size:19px;
+    letter-spacing:.08em;
+    padding:15px;
+    cursor:pointer;
+    transition:background .15s, transform .1s;
+  }
+  button:hover{background:var(--gold-bright)}
+  button:active{transform:scale(.99)}
+  button:disabled{opacity:.6;cursor:default}
+  .msg{margin-top:14px;min-height:24px;font-size:16px}
+  .msg.ok{color:var(--gold-bright)}
+  .msg.err{color:var(--alert)}
+
+  /* Three kinds */
+  .kinds{
+    margin-top:34px;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+  .kind{display:flex;gap:14px;align-items:flex-start}
+  .kind svg{flex:0 0 34px;width:34px;height:34px;stroke:var(--gold);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;margin-top:2px}
+  .kind h3{font-family:'Cinzel',serif;font-weight:500;font-size:18px;color:var(--gold-bright)}
+  .kind p{font-size:16px;color:var(--muted)}
+
+  /* Trust + footer */
+  .trust{
+    margin-top:36px;
+    padding-top:22px;
+    border-top:1px solid var(--line);
+    text-align:center;
+    font-size:15.5px;
+    color:var(--cream);
+  }
+  footer{margin-top:18px;text-align:center;font-size:13.5px;color:var(--muted);line-height:1.55}
+  footer .brand{display:block;margin-top:12px;font-family:'Cinzel',serif;letter-spacing:.06em;color:var(--gold)}
+
+  @media (min-width:640px){
+    .kinds{grid-template-columns:repeat(3,1fr);gap:22px}
+    .kind{flex-direction:column;gap:8px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .ecg path{animation:none;stroke-dashoffset:0}
+    button{transition:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <svg class="ecg" viewBox="0 0 340 56" aria-hidden="true">
+      <path d="M2 30 H70 L82 30 L92 8 L104 50 L114 30 H150 L160 30 L170 18 L180 30 H240 L252 30 L262 4 L274 52 L284 30 H338"/>
+    </svg>
+    <h1>Acefab ♤ Health Bytes 🩺</h1>
+    <p class="sub">Small, clear messages from a nursing student, for students and colleagues.</p>
+  </header>
+
+  <section class="preview" aria-label="Sample message">
+    <div class="tag">Term of the day</div>
+    <h2>Dyspnoea</h2>
+    <p>Difficulty breathing, or a feeling of shortness of breath.</p>
+    <p class="ex">"The patient presented with dyspnoea on exertion" means they became breathless during activity.</p>
+  </section>
+
+  <section class="signup">
+    <form id="joinForm" action="https://buttondown.com/api/emails/embed-subscribe/drbrainer" method="post" novalidate>
+      <input type="hidden" value="1" name="embed">
+      <label for="name">Your name <span>(optional)</span></label>
+      <input type="text" id="name" name="metadata__name" autocomplete="given-name" placeholder="e.g. Ama">
+
+      <label for="email">Email address</label>
+      <input type="email" id="email" name="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required>
+
+      <button type="submit" id="joinBtn">Join</button>
+      <div class="msg" id="msg" role="status" aria-live="polite"></div>
+    </form>
+  </section>
+
+  <section class="kinds" aria-label="What you will receive">
+    <div class="kind">
+      <svg viewBox="0 0 34 34" aria-hidden="true"><path d="M17 4c-5 0-9 3.8-9 8.6 0 3 1.5 5 3 6.6.9 1 1.5 2 1.5 3.3v1h9v-1c0-1.3.6-2.3 1.5-3.3 1.5-1.6 3-3.6 3-6.6C26 7.800 22 4 17 4z"/><path d="M13.500 28h7M15 31h4"/></svg>
+      <div><h3>Tip</h3><p>One clear habit for sleep, hygiene, food or mental wellbeing.</p></div>
+    </div>
+    <div class="kind">
+      <svg viewBox="0 0 34 34" aria-hidden="true"><path d="M19 3 8 19h8l-2 12 11-16h-8z"/></svg>
+      <div><h3>Hack</h3><p>A simple trick for staying healthy on a student budget and schedule.</p></div>
+    </div>
+    <div class="kind">
+      <svg viewBox="0 0 34 34" aria-hidden="true"><path d="M6 5h16a4 4 0 0 1 4 4v20H10a4 4 0 0 1-4-4z"/><path d="M6 25a4 4 0 0 1 4-4h16M12 10h9M12 14h6"/></svg>
+      <div><h3>Term</h3><p>A medical word explained in plain language, with an example.</p></div>
+    </div>
+  </section>
+
+  <p class="trust">No spam. Unsubscribe anytime.<br>Made by Kingsley Xorlace Brainer, UG-SoNM.</p>
+
+  <footer>
+    Health Bytes is for health education only. It is not medical advice, diagnosis or treatment. If you feel unwell, see a qualified health professional.
+    <span class="brand">Acefab ♤</span>
+  </footer>
+
+</div>
+
+<script>
+  const form = document.getElementById('joinForm');
+  const msg  = document.getElementById('msg');
+  const btn  = document.getElementById('joinBtn');
+  const emailOk = v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    msg.className = 'msg';
+    const email = form.email.value.trim();
+
+    if (!emailOk(email)) {
+      msg.textContent = 'Enter a valid email address, like you@example.com.';
+      msg.classList.add('err');
+      form.email.focus();
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Joining...';
+
+    try {
+      await fetch(form.action, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: new URLSearchParams(new FormData(form))
+      });
+      msg.textContent = "Almost done. Check your email and tap the confirmation link.";
+      msg.classList.add('ok');
+      form.reset();
+    } catch (err) {
+      msg.textContent = 'Could not sign you up. Check your connection and try again.';
+      msg.classList.add('err');
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Join';
+    }
+  });
+</script>
+</body>
+</html>
